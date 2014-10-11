@@ -51,7 +51,7 @@ public class LongestIncreasingSubseqRecursive {
 		LongestIncreasingSubseqRecursive R = new LongestIncreasingSubseqRecursive( values );
 		
 		int maxLength = R.LongestSubseqRecursive(R, size-1);
-		if( maxLength != 0 ) {
+		if( maxLength != 4 ) {
 			maxLength -= 4;
 		}//end if
 		System.out.println(maxLength);
