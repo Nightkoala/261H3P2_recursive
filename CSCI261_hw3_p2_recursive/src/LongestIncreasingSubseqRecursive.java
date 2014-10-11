@@ -3,8 +3,8 @@
  * 
  * @author	Derek Brown <djb3718@rit.edu>
  * 
- * Purpose	A recursive implementation for finding the longest subsequence of
- * 			increasing numbers in an array
+ * Purpose	A recursive implementation for finding the longest subsequence
+ *		of increasing numbers in an array
  */
 
 import java.util.Scanner;
@@ -29,15 +29,16 @@ public class LongestIncreasingSubseqRecursive {
 	// Methods
 	
 	/**
-	 * Implementation for recursive approach to finding the longest subsequence
-	 * of increasing values
+	 * Implementation for recursive approach to finding the longest
+	 * subsequence of increasing values
 	 * 
-	 * @param R		The object containing the array of values
-	 * @param j		Recursion value
+	 * @param R	The object containing the array of values
+	 * @param j	Recursion value
 	 * 
-	 * @return		The length of the longest subsequence
+	 * @return	The length of the longest subsequence
 	 */
-	public int LongestSubseqRecursive(LongestIncreasingSubseqRecursive R, int j ) {
+	public int LongestSubseqRecursive( LongestIncreasingSubseqRecursive R,
+		int j ) {
 		if( j < 0 ) {
 			return 0;
 		}//end if
@@ -49,14 +50,16 @@ public class LongestIncreasingSubseqRecursive {
 				break;
 			}//end if
 		}//end while
-		int maxLength = Math.max( 1 + LongestSubseqRecursive( R, k ), LongestSubseqRecursive( R, j-1 ) );
+		int maxLength = Math.max( 1 + LongestSubseqRecursive( R, k ),
+			LongestSubseqRecursive( R, j-1 ) );
 		return maxLength;
 	}//end LongestSubseqRecursive
 
 	/**
-	 * Reads in the data from the user and feeds the data into the algorithm,
-	 * The algorithm then finds the length of the longest subsequence of 
-	 * increasing values recursively, and then print the result
+	 * Reads in the data from the user and feeds the data into the
+	 * algorithm, The algorithm then finds the length of the longest
+	 * subsequence of increasing values recursively, and then print the
+	 * result
 	 * 
 	 * @param args	Command line arguments, unused.
 	 */
@@ -72,7 +75,8 @@ public class LongestIncreasingSubseqRecursive {
 			values[i] = val;
 		}//end for
 		sc.close();
-		LongestIncreasingSubseqRecursive R = new LongestIncreasingSubseqRecursive( values );
+		LongestIncreasingSubseqRecursive R =
+			new LongestIncreasingSubseqRecursive( values );
 		int maxLength = R.LongestSubseqRecursive(R, size-1);
 		if( maxLength != 4 ) {
 			maxLength -= 4;
