@@ -1,4 +1,4 @@
-/*
+/**
  * LongestIncreasingSubseqRecursive.java
  * 
  * @author	Derek Brown <djb3718@rit.edu>
@@ -12,13 +12,31 @@ import java.util.Scanner;
 public class LongestIncreasingSubseqRecursive {
 	
 	// Attributes
+	
 	private int[] sequence;
 	
 	// Constructor
+	
+	/**
+	 * Constructor for creating a LongestIncreasingSubseqRecursive instance
+	 * 
+	 * @param values	The values given by user
+	 */
 	public LongestIncreasingSubseqRecursive( int[] values ) {
 		this.sequence = values;
 	}//end LongestIncreasingSubseqRecursive constructor
 	
+	// Methods
+	
+	/**
+	 * Implementation for recursive approach to finding the longest subsequence
+	 * of increasing values
+	 * 
+	 * @param R		The object containing the array of values
+	 * @param j		Recursion value
+	 * 
+	 * @return		The length of the longest subsequence
+	 */
 	public int LongestSubseqRecursive(LongestIncreasingSubseqRecursive R, int j ) {
 		if( j < 0 ) {
 			return 0;
@@ -35,6 +53,13 @@ public class LongestIncreasingSubseqRecursive {
 		return maxLength;
 	}//end LongestSubseqRecursive
 
+	/**
+	 * Reads in the data from the user and feeds the data into the algorithm,
+	 * The algorithm then finds the length of the longest subsequence of 
+	 * increasing values recursively, and then print the result
+	 * 
+	 * @param args	Command line arguments, unused.
+	 */
 	public static void main(String[] args) {
 		// Read in values
 		Scanner sc = new Scanner( System.in );
@@ -47,9 +72,7 @@ public class LongestIncreasingSubseqRecursive {
 			values[i] = val;
 		}//end for
 		sc.close();
-		
 		LongestIncreasingSubseqRecursive R = new LongestIncreasingSubseqRecursive( values );
-		
 		int maxLength = R.LongestSubseqRecursive(R, size-1);
 		if( maxLength != 4 ) {
 			maxLength -= 4;
